@@ -99,26 +99,6 @@ $(document).ready(function(){
         descripcion = $.trim($("#Descripcion").val());
 
         $.ajax({
-            url: "bd/bitacora.php",
-            type: "POST",
-            dataType: "json",
-            data: {
-                id:id,
-                nombre:nombre, 
-                apellido:apellido,
-                nit:nit,
-                fch_nacimiento:fch_nacimiento,
-                genero:genero,
-                direccion:direccion,
-                telefono:telefono,
-                descripcion:descripcion,
-                opcion:opcion
-            },
-            success: function(){
-            }
-        });
-
-        $.ajax({
             url: "bd/crud.php",
             type: "POST",
             dataType: "json",
