@@ -20,7 +20,8 @@ if($opcion==1){
     $fecha = date("T/m/d");
     $hora = date("h:i:sa");
     
-    $consulta = "INSERT INTO bitacora (Fecha, Hora, ID_Usuario, Tabla, Accion, Campo_ID Campo_Modificado, Valor_Antiguo, Valor_Nuevo) VALUES('$fecha', '$hora', '1', 'clientes', 'INSERT', '10', 'ID_Cliente', 'NULL', '10')";
+    $consulta = "INSERT INTO bitacora (Fecha, Hora, ID_Usuario, Tabla, Accion, Campo_ID Campo_Modificado, Valor_Antiguo, Valor_Nuevo)
+                             VALUES('$fecha', '', '', '', '', '', '', '', '')";
     $resultado = $conexion->prepare($consulta);
     $resultado->execute();
 }
@@ -58,7 +59,6 @@ switch($opcion){
 }
 */
 
-print json_encode($data, JSON_UNESCAPED_UNICODE); //enviamos el array final en formato JSON a el archivo JS
 $conexion =NULL;
 
 ?>

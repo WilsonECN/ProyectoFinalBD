@@ -7,6 +7,7 @@ $consulta = "SELECT ID_Cliente, Nombre, Apellido, NIT, Fch_Nacimiento, Genero, D
 $resultado = $conexion->prepare($consulta);
 $resultado->execute();
 $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!doctype html>
@@ -17,7 +18,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="#" />  
-    <title>PROYECTO FINAL</title>
+    <title>CLIENTES</title>
       
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">

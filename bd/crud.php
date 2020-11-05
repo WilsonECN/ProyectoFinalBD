@@ -19,16 +19,33 @@ $opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
 
 switch($opcion){
     case 1:
-        $consulta = "INSERT INTO clientes (Nombre, Apellido, NIT, Fch_Nacimiento, Genero, Direccion, Telefono, Descripcion) VALUES('$Nombre', '$Apellido', '$NIT', '$Fch_Nacimiento', '$Genero', '$Direccion', '$Telefono', '$Descripcion')";
+        //ingreso de nuevo dato
+        $consulta = "INSERT INTO clientes (Nombre, Apellido, NIT, Fch_Nacimiento, Genero, Direccion, Telefono, Descripcion) 
+        VALUES('$Nombre', '$Apellido', '$NIT', '$Fch_Nacimiento', '$Genero', '$Direccion', '$Telefono', '$Descripcion')";
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
 
+        $fecha = date("Y/m/d");
+        date_default_timezone_set('America/Guatemala');
+        $hora = date("h:i:s");
+
+        //consulta del nuevo dato ingresado
         $consulta = "SELECT ID_Cliente, Nombre, Apellido, NIT, Fch_Nacimiento, Genero, Direccion, Telefono, Descripcion FROM clientes ORDER BY ID_Cliente DESC LIMIT 1";
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
         $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
+
+        $IDCLIENTE = $data[0]['ID_Cliente'];
+
+        //Envio a bitacora
+        $consulta = "INSERT INTO bitacora (Fecha, Hora, ID_Usuario, Tabla, Accion, Campo_ID, Campo_Modificado, Valor_Antiguo, Valor_Nuevo) 
+        VALUES ('$fecha', '$hora', '$opcion', 'clientes', 'INSERT', '$IDCLIENTE', 'ID_Clientes', 'NULL', '$IDCLIENTE')";
+        $resultado = $conexion->prepare($consulta);
+        $resultado->execute();
+
         break;
     case 2:
+        //actualización de los campos 
         $consulta = "UPDATE clientes SET Nombre='$Nombre', Apellido='$Apellido', NIT='$NIT', Fch_Nacimiento='$Fch_Nacimiento', Genero='$Genero', Direccion='$Direccion', Telefono='$Telefono', Descripcion='$Descripcion' WHERE ID_Cliente='$ID'";
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
@@ -37,6 +54,9 @@ switch($opcion){
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
         $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
+
+        
+
         break;
     case 3:
         $consulta = "DELETE FROM clientes WHERE ID_Cliente='$ID' ";
