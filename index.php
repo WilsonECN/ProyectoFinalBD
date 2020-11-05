@@ -2,7 +2,7 @@
 include_once 'bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
-
+echo 'hola';
 $consulta = "SELECT ID_Cliente, Nombre, Apellido, NIT, Fch_Nacimiento, Genero, Direccion, Telefono, Descripcion FROM clientes";
 $resultado = $conexion->prepare($consulta);
 $resultado->execute();
