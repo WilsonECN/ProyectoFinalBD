@@ -4,8 +4,8 @@ class Conexion{
     public static function Conectar(){
         define('servidor', 'localhost');
         define('nombre_db', 'PP');
-        define('usuario', 'admin');
-        define('pass', 'clubextra');
+        define('usuario', 'root');
+        define('pass', '');
         
         $opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
         
