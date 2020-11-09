@@ -3,7 +3,7 @@ include_once 'bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
-$consulta = "SELECT ID_Bitacora, Fecha, Hora, ID_Usuario, Tabla, Accion, Campo_ID, Campo_Modificado, Valor_Antiguo, Valor_Nuevo FROM Bitacora";
+$consulta = "SELECT ID_Bitacora, Fecha, Hora, ID_Usuario, Tabla, Accion, Campo_ID, Campo_Modificado, Valor_Antiguo, Valor_Nuevo FROM bitacora";
 $resultado = $conexion->prepare($consulta);
 $resultado->execute();
 $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
@@ -32,8 +32,6 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
       
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
     </head>
-
-
         <div class="container prueba">
             <div class="row">
                 <div class="col-lg-12">
@@ -81,7 +79,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         </div>
         
  
-            <!-- jQuery, Popper.js, Bootstrap JS -->
+    <!-- jQuery, Popper.js, Bootstrap JS -->
     <script src="assets/jquery/jquery-3.3.1.min.js"></script>
     <script src="assets/popper/popper.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

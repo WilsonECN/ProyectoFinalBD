@@ -95,7 +95,7 @@ switch($opcion){
             $nuevo   = $data[0]["Direccion"];
             //            $conexion  ID_Usuario,    Tabla,     Accion,    Campo_ID,  Campo_Modificado,  Valor_Antiguo,  Valor_Nuevo
             EnvioBitacora($conexion, $ID_Usuario, "clientes", "UPDATE",     "$ID",       "$campo",        "$antiguo",    "$nuevo" );
-            error_log("Direccion ACTUALIZADO");
+            //error_log("Direccion ACTUALIZADO");
         }
         if($dataAntes[0]["Telefono"] != $data[0]["Telefono"]){
             $campo = "Telefono";
@@ -103,7 +103,7 @@ switch($opcion){
             $nuevo   = $data[0]["Telefono"];
             //            $conexion  ID_Usuario,    Tabla,     Accion,    Campo_ID,  Campo_Modificado,  Valor_Antiguo,  Valor_Nuevo
             EnvioBitacora($conexion, $ID_Usuario, "clientes", "UPDATE",     "$ID",       "$campo",        "$antiguo",    "$nuevo" );
-            error_log("Telefono ACTUALIZADO");
+            //error_log("Telefono ACTUALIZADO");
         }
         if($dataAntes[0]["Descripcion"] != $data[0]["Descripcion"]){
             $campo = "Descripcion";
@@ -111,7 +111,7 @@ switch($opcion){
             $nuevo   = $data[0]["Descripcion"];
             //            $conexion  ID_Usuario,    Tabla,     Accion,    Campo_ID,  Campo_Modificado,  Valor_Antiguo,  Valor_Nuevo
             EnvioBitacora($conexion, $ID_Usuario, "clientes", "UPDATE",     "$ID",       "$campo",        "$antiguo",    "$nuevo" );
-            error_log("Descripcion ACTUALIZADO");
+            //error_log("Descripcion ACTUALIZADO");
         }
 
         break;
@@ -121,9 +121,7 @@ switch($opcion){
         $resultado->execute();
 
         //            $conexion  ID_Usuario,    Tabla,     Accion,    Campo_ID,  Campo_Modificado,  Valor_Antiguo,  Valor_Nuevo
-        EnvioBitacora($conexion, $ID_Usuario, "clientes", "DELETE", "$ID",  "ID_Cliente",       "$ID",      "NULL" );
-
-
+        EnvioBitacora($conexion, $ID_Usuario, "clientes", "DELETE",      "$ID",    "ID_Cliente",       "$ID",         "NULL" );
         break;
 }
 

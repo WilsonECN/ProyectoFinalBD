@@ -3,7 +3,7 @@ $(document).ready(function(){
         "columnDefs":[{
             "targets": -1,
             "data": null,
-            "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar'>EDITAR</button><button class='btn btn-danger btnBorrar'>BORRAR</button></div></div>"
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-warning btnEditar'><span class='material-icons'>edit</span></button><button class='btn btn-danger btnBorrar'><span class='material-icons'>remove_circle</span></button></div></div>"
         }],
         
         "language": {
@@ -34,13 +34,13 @@ $(document).ready(function(){
         opcion=1;//nuevo usuario
     });
     
-    
     var fila;//editar o borar registro
-    
+
     $(document).on("click", ".btnEditar", function(){
         fila = $(this).closest("tr");
         id = parseInt(fila.find('td:eq(0)').text());
         nombre = fila.find('td:eq(1)').text();
+        //nombre = (document.getElementById('ID_USUARIO').value);
         apellido = fila.find('td:eq(2)').text();
         Fch_Nacimiento = fila.find('td:eq(3)').text();
         Genero = fila.find('td:eq(4)').text();
@@ -76,7 +76,7 @@ $(document).ready(function(){
         var respuesta = confirm("¿Está seguro de eliminar el registro: "+id+"?");
         if(respuesta){
             $.ajax({
-               url: "bd/crud.php",
+               url: "../bd/crud.php",
                 type: "POST",
                 dataType: "json",
                 data: {opcion: opcion, id: id},
@@ -99,7 +99,7 @@ $(document).ready(function(){
         descripcion = $.trim($("#Descripcion").val());
 
         $.ajax({
-            url: "bd/crud.php",
+            url: "../bd/crud.php",
             type: "POST",
             dataType: "json",
             data: {
