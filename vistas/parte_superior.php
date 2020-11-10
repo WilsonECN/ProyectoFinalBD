@@ -48,7 +48,7 @@
             </div>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link text-dark text-dark" href="clt.php">
+                <a class="nav-link text-dark text-dark" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt text-dark"></i>
                     <span>Clientes</span></a>
             </li>
