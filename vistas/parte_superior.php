@@ -91,7 +91,7 @@
 
                     <!-- Topbar Search -->
                     
-                    <h1 style="font-size:2vw;text-align:center;">CLIENTES</h1>
+                    <h1 style="font-size:2vw;text-align:center;"><?php echo $VENTANA;?></h1>
                    
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
