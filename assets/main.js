@@ -76,7 +76,7 @@ $(document).ready(function(){
         var respuesta = confirm("¿Está seguro de eliminar el registro: "+id+"?");
         if(respuesta){
             $.ajax({
-               url: "../bd/crud.php",
+               url: "bd/crud.php",
                 type: "POST",
                 dataType: "json",
                 data: {opcion: opcion, id: id},
@@ -99,7 +99,7 @@ $(document).ready(function(){
         descripcion = $.trim($("#Descripcion").val());
 
         $.ajax({
-            url: "../bd/crud.php",
+            url: "bd/crud.php",
             type: "POST",
             dataType: "json",
             data: {

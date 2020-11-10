@@ -9,19 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
     <!-- CSS personalizado --> 
-    <link rel="stylesheet" href="assets/main.css">  
+    <link rel="stylesheet" href="./assets/main.css">  
     <title>Inicio</title>
 
     <!-- Custom fonts for this template-->
-    <link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="./assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="assets/sb-admin-2.min.css" rel="stylesheet">
+    <link href="./assets/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -35,7 +35,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fas fa-laugh-wink text-dark"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3 text-dark">WPD<sup>admin</sup></div>
             </a>
@@ -91,7 +91,7 @@
 
                     <!-- Topbar Search -->
                     
-                    <h1 style="font-size:2vw;text-align:center;"><?php echo $VENTANA;?></h1>
+                    <h1 style="font-size:2vw;text-align:center;">CLIENTES</h1>
                    
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
