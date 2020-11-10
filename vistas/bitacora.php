@@ -1,5 +1,5 @@
 <?php
-include_once '../bd/conexion.php';
+include_once './bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
@@ -32,7 +32,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
       
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
     </head>
-        <div class="container prueba">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="table-responsive">
@@ -80,6 +80,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         
  
     <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="assets/jquery/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/jquery/jquery-3.3.1.min.js"></script>
     <script src="../assets/popper/popper.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>

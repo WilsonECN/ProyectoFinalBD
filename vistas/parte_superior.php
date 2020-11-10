@@ -62,7 +62,7 @@
             </div>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link text-dark" href="bit.php">
+                <a class="nav-link text-dark" href="Bitacora.php">
                     <i class="fas fa-fw fa-tachometer-alt text-dark"></i>
                     <span>Bitácora</span></a>
             </li>

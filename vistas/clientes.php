@@ -35,10 +35,10 @@ echo '<input type="hidden" id="ID_USUARIO" name="ID_Usuario" value="' . $NOMBRE 
     </head>
     
     <body>
-        <div class="container">
+        <div class="container p">
             <div class="row">
                 <div class="col-lg-12">
-                    <button id="btnNuevo" type="button" class="btn btn-success">NUEVO</button>
+                    <button id="btnNuevo" type="button" class="btn btn-success">Añadir Cliente</button>
                 </div>
             </div>
         </div>
@@ -166,7 +166,12 @@ echo '<input type="hidden" id="ID_USUARIO" name="ID_Usuario" value="' . $NOMBRE 
                     </div>
                 </div>
             </div>
-            <!-- jQuery, Popper.js, Bootstrap JS -->
+
+
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+        <!-- Bootstrap core JavaScript-->
+        <script src="assets/jquery/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/jquery/jquery-3.3.1.min.js"></script>
     <script src="assets/popper/popper.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
