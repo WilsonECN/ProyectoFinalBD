@@ -53,20 +53,7 @@
                     <span>Clientes</span></a>
             </li>
 
-            
-            <!-- Divider -->
-            <hr class="sidebar-divider bg-secondary">
-            <!-- Heading -->
-            <div class="sidebar-heading text-secondary">
-                Administrador
-            </div>
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link text-dark" href="Bitacora.php">
-                    <i class="fas fa-fw fa-tachometer-alt text-dark"></i>
-                    <span>Bitácora</span></a>
-            </li>
-
+           
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0 bg-secondary" id="sidebarToggle"></button>
