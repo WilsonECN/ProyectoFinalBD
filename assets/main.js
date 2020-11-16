@@ -136,5 +136,15 @@ $(document).ready(function(){
     $("#modalCRUD").modal("hide");
     
     });
+
+
+    $(document).on("click", ".btnLOGIN", function(){
+        fila = $(this);
+         id = parseInt($(this).closest("tr").find('td:eq(0)').text());
+         opcion = 3; //borrar dato
+         console.log(id);
+         console.log(opcion);
+         var respuesta = confirm("Llena todos los campos");
+     });
     
 });

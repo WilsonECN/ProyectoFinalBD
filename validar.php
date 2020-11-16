@@ -1,5 +1,5 @@
 <?php
-	
+session_start();
 $user = $_POST['usuario'];
 $contra = $_POST['password'];
 
@@ -7,12 +7,12 @@ $usuario = "";
 $contrase = "";
 
 if(empty($user)||empty($contra)){
-echo '<script language="javascript">alert("Por favor llenar todos los campos");</script>';
-echo '<a href="javascript:history.go(-1)">ATRÁS</a>';
+	echo '<script language="javascript">alert("Por favor llenar todos los campos");</script>';
+	header("location: index.php");
 }
 	 else{
 				$servername = "127.0.0.1";
-				$database = "pp";
+				$database = "PP";
 				$username = "root";
 				$password = "";
 				$conn = mysqli_connect($servername, $username, $password, $database);
@@ -27,35 +27,24 @@ echo '<a href="javascript:history.go(-1)">ATRÁS</a>';
 
 					      while ($fila =mysqli_fetch_array($datos)){
 							$usuario = $fila["ID_Usuario"];
+							$nombre = $fila["Nombre"];
+							$apellido = $fila["Apellido"];
 							$contrase= $fila["Pass"];
 							$idacceso= $fila["ID_Acceso"];
 							}
 
 						if (empty($usuario)) {
 								echo '<script language="javascript">alert("El usuario no existe");</script>';
-								echo '<a href="javascript:history.go(-1)">ATRÁS</a>';
-							} else if ($usuario==$user and $contrase==$contra) { 
-								
-								if($idacceso==1){ 
-									
-									require_once"vistas/parte_superior.php";
-
-									require_once"vistas/clientes.php";
-
-									require_once"vistas/parte_inferior.php";} 
-								
-								else{ 
-
-									require_once"vistas/parte_superior2.php";
-
-									require_once"vistas/clientes.php";
-
-									require_once"vistas/parte_inferior.php";}	
-								
+								header("location: index.php");
+							} else if ($usuario==$user and $contrase==$contra) { 								
+									$_SESSION["s_usuario"] = $nombre.' '.$apellido;
+									$_SESSION["s_acceso"] = $idacceso;
+									$_SESSION["s_dash"] = "CLIENTES";
+									header("location: clientes.php");
 								}
 								else{
 									echo '<script language="javascript">alert("Datos Incorrectos");</script>';
-									echo '<a href="javascript:history.go(-1)">ATRÁS</a>';
+									header("location: index.php");
 								}
 
 
@@ -63,8 +52,5 @@ echo '<a href="javascript:history.go(-1)">ATRÁS</a>';
 					      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 					}
 					mysqli_close($conn);
-				
 				}
-
-
 ?>

@@ -15,3 +15,6 @@ p {
   margin-right: 150px;
   margin-left: 80px;
 }
+
+th { font-size: 15px; }
+td { font-size: 14px; }

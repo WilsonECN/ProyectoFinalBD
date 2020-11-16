@@ -1,4 +1,4 @@
-<?php require_once"vistas/parte_superior.php"?>
+<?php require_once"vistas/parte_superior_bitacora.php"?>
 
 <?php require_once"vistas/bitacora.php"?>
 

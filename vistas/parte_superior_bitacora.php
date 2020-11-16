@@ -35,12 +35,6 @@ if($_SESSION["s_usuario"] === null){
 </head>
 
 <body id="page-top">
-    <?php 
-
-    if(isset($_POST['btnClientes'])) { 
-        $_SESSION["s_dash"] = "CLIENTES BUTON";
-    }
-     ?>
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
@@ -62,7 +56,7 @@ if($_SESSION["s_usuario"] === null){
             </div>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link text-dark text-dark button" href="clientes.php" name="btnClientes">
+                <a class="nav-link text-dark text-dark button" href="clientes.php">
                     <i class="fas fa-fw fa-tachometer-alt text-dark"></i>
                     <span>Clientes</span></a>
             </li>
@@ -108,7 +102,7 @@ if($_SESSION["s_usuario"] === null){
 
                     <!-- Topbar Search -->
                     
-                    <h1 style="font-size:2vw;text-align:center;">CLIENTES</h1>
+                    <h1 style="font-size:2vw;text-align:center;">BITÁCORA</h1>
                    
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
