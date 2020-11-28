@@ -7,9 +7,8 @@ $consulta = "SELECT ID_Cliente, Nombre, Apellido, NIT, Fch_Nacimiento, Genero, D
 $resultado = $conexion->prepare($consulta);
 $resultado->execute();
 $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
-//$ID_USUARIO= $_POST['s_acceso'];
-$ID_USUARIO= "WILSOOON";
-echo '<input type="hidden" id="ID_USUARIO" name="ID_Usuario" value="' . $ID_USUARIO . '" />';
+//$ID_USUARIO= "WILSOOON";
+echo '<input type="hidden" id="ID_USUARIO" name="ID_Usuario" value="' . $_SESSION["ID_USUARIO"] . '" />';
 ?>
 
 <!doctype html>

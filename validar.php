@@ -13,8 +13,8 @@ if(empty($user)||empty($contra)){
 	 else{
 				$servername = "127.0.0.1";
 				$database = "PP";
-				$username = "root";
-				$password = "";
+				$username = "admin";
+				$password = "clubextra";
 				$conn = mysqli_connect($servername, $username, $password, $database);
 // Check connection
 					if (!$conn) {
@@ -39,6 +39,7 @@ if(empty($user)||empty($contra)){
 							} else if ($usuario==$user and $contrase==$contra) { 								
 									$_SESSION["s_usuario"] = $nombre.' '.$apellido;
 									$_SESSION["s_acceso"] = $idacceso;
+									$_SESSION["ID_USUARIO"] = $usuario;
 									$_SESSION["s_dash"] = "CLIENTES";
 									header("location: clientes.php");
 								}
