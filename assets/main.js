@@ -40,7 +40,7 @@ $(document).ready(function(){
         fila = $(this).closest("tr");
         id = parseInt(fila.find('td:eq(0)').text());
         nombre = fila.find('td:eq(1)').text();
-        //nombre = (document.getElementById('ID_USUARIO').value);
+        ID_Usuario = (document.getElementById('ID_USUARIO').value);
         apellido = fila.find('td:eq(2)').text();
         Fch_Nacimiento = fila.find('td:eq(3)').text();
         Genero = fila.find('td:eq(4)').text();
@@ -70,6 +70,7 @@ $(document).ready(function(){
     $(document).on("click", ".btnBorrar", function(){
        fila = $(this);
         id = parseInt($(this).closest("tr").find('td:eq(0)').text());
+        ID_Usuario = (document.getElementById('ID_USUARIO').value);
         opcion = 3; //borrar dato
         console.log(id);
         console.log(opcion);
@@ -79,7 +80,11 @@ $(document).ready(function(){
                url: "bd/crud.php",
                 type: "POST",
                 dataType: "json",
-                data: {opcion: opcion, id: id},
+                data: {
+                    opcion: opcion, 
+                    id: id,
+                    ID_Usuario:ID_Usuario
+                },
                 success: function(){
                     tablaClientes.row(fila.parents('tr')).remove().draw();
                 } 
@@ -97,6 +102,7 @@ $(document).ready(function(){
         direccion = $.trim($("#Direccion").val());
         telefono = $.trim($("#Telefono").val());
         descripcion = $.trim($("#Descripcion").val());
+        ID_Usuario = (document.getElementById('ID_USUARIO').value);
 
         $.ajax({
             url: "bd/crud.php",
@@ -112,7 +118,8 @@ $(document).ready(function(){
                 direccion:direccion,
                 telefono:telefono,
                 descripcion:descripcion,
-                opcion:opcion
+                opcion:opcion,
+                ID_Usuario:ID_Usuario
             },
             success: function(data){
                 console.log(data);

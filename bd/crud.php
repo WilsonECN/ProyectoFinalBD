@@ -16,9 +16,8 @@ $Direccion = (isset($_POST['direccion'])) ? $_POST['direccion'] : '';
 $Telefono = (isset($_POST['telefono'])) ? $_POST['telefono'] : '';
 $Descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : '';
 $opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
-
-//$ID_Usuario = (isset($_POST['ID_Usuario'])) ? $_POST['ID_Usuario'] : '';
-$ID_Usuario = 1;
+$ID_Usuario = (isset($_POST['ID_Usuario'])) ? $_POST['ID_Usuario'] : '';
+//$ID_Usuario = 1;
 switch($opcion){
     case 1:
         //ingreso de nuevo dato
